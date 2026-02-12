@@ -307,7 +307,7 @@ public class JDialogProductos extends javax.swing.JDialog {
             }
         });
 
-        jLabel3.setText("Buscar Código:");
+        jLabel3.setText("Buscar Nombre:");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -460,7 +460,7 @@ public class JDialogProductos extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(rootPane, "Ingrese un nombre paras buscar", "Error", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
-        List<Producto> listaProductos = productoDAO.buscarPorCodigo(Integer.valueOf(jTextBuscar.getText()));
+        List<Producto> listaProductos = productoDAO.buscarPorNombre(jTextBuscar.getText());
         modeloTabla.setRowCount(0);
 
         for (Producto p : listaProductos) {

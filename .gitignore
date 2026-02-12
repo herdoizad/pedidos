@@ -1,0 +1,29 @@
+# Maven
+/target/
+
+# Logs
+*.log
+
+# IDE IntelliJ
+.idea/
+*.iml
+
+# NetBeans
+/nbproject/private/
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
