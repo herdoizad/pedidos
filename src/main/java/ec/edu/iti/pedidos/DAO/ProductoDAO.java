@@ -60,6 +60,26 @@ public class ProductoDAO {
     }
 
     /**
+     * Método para buscar un producto por nombre
+     *
+     * @param nombre String con el nombre
+     * @return Lista de Productos
+     */
+    public List<Producto> buscarPorNombre(String nombre) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PedidosPU");
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.createQuery(
+                    "select p from Producto p where LOWER(p.proNombre) like :nombre", Producto.class)
+                    .setParameter("nombre", "%" + nombre.toLowerCase() + "%")
+                    .getResultList();
+
+        } finally {
+            em.close();
+        }
+    }
+
+    /**
      * Método que inserta un producto
      *
      * @param producto Objeto de tipo Producto
